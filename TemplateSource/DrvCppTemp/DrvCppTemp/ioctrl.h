@@ -5,8 +5,8 @@
 #endif
 
 //为避免混淆这两个要一致
-#define  DEVICE_NAME L"\\Device\\FGDrv"
-#define  LINK_NAME   L"\\Dosdevices\\FGDrv"
+#define  DEVICE_NAME L"\\Device\\DrvCppTemp"
+#define  LINK_NAME   L"\\Dosdevices\\DrvCppTemp"
 
 //使用时第二个参数按顺序增加，大小在0x0800-0x0FFF
 static const auto DEVICE_CODE = 0x8000ul;

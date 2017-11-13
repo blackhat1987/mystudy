@@ -10,6 +10,7 @@ VOID DriverUnload(__in DRIVER_OBJECT *driverObject)
 	LOG_DEBUG("unload\r\n");
 	return;
 }
+
 _Use_decl_annotations_
 EXTERN_C
 NTSTATUS
@@ -24,8 +25,6 @@ DriverMain(
 	  
 	//…Ë÷√dispatch∫Ø ˝
 	setDpcFun();
-	
-
 	if (device.create_device(DEVICE_NAME, LINK_NAME, true))
 		return STATUS_SUCCESS;
 	return STATUS_UNSUCCESSFUL;

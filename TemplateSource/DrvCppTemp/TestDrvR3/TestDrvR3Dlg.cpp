@@ -67,6 +67,10 @@ BEGIN_MESSAGE_MAP(CTestDrvR3Dlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON5, &CTestDrvR3Dlg::OnBnClickedButton5)
+	ON_BN_CLICKED(IDC_BUTTON1, &CTestDrvR3Dlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON2, &CTestDrvR3Dlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &CTestDrvR3Dlg::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON4, &CTestDrvR3Dlg::OnBnClickedButton4)
 END_MESSAGE_MAP()
 
 
@@ -169,4 +173,55 @@ void CTestDrvR3Dlg::OnBnClickedButton5()
 
 	DWORD retSize = 0;
 	auto bRet = DeviceIoControl(handle.get(), hexCode, NULL, 0, NULL, 0, &retSize, nullptr);
+}
+
+HANDLE hDev = NULL;
+void CTestDrvR3Dlg::OnBnClickedButton1()
+{
+	//同步操作
+	hDev = CreateFile(L"\\\\.\\DrvCppTemp", 
+		GENERIC_WRITE | GENERIC_READ,
+		0, NULL, OPEN_EXISTING, 0, NULL);
+
+	 //异步操作
+	/*hDev = CreateFile(L"\\\\.\\DrvCppTemp",
+		GENERIC_WRITE | GENERIC_READ,
+		0, NULL, OPEN_EXISTING, FILE_FLAG_OVERLAPPED, NULL);*/
+	
+}
+
+void CTestDrvR3Dlg::OnBnClickedButton2()
+{
+	//同步操作
+	char buffer[256];
+	DWORD ret;
+	ReadFile(hDev, buffer, 256, &ret, NULL);
+
+	 //异步操作
+	/*char buffer[256];
+	OVERLAPPED overlap = { 0 };
+	auto bRet = ReadFile(hDev, buffer, 256, NULL, &overlap);
+	WaitForSingleObject(hDev, INFINITE);*/
+}
+
+void CTestDrvR3Dlg::OnBnClickedButton3()
+{
+	//同步操作
+	char buffer[256];
+	DWORD ret;
+	WriteFile(hDev, buffer, 256, &ret, NULL);
+	
+
+	/* //异步操作
+	char buffer[256];
+	OVERLAPPED overlap = { 0 };
+	auto bRet = WriteFile(hDev, buffer, 256, NULL, &overlap);
+	WaitForSingleObject(hDev, INFINITE);
+	*/
+}
+
+void CTestDrvR3Dlg::OnBnClickedButton4()
+{
+	// 同步操作
+	CloseHandle(hDev);
 }

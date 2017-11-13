@@ -3,8 +3,6 @@
 
 namespace usr::util::inject
 {
-	//remote thread inject
-	//apc inject
-	//thread context inject
-	//nt inject for native process
+	//static const BYTE x86shellcode[] = {};
+	//static const BYTE x64shellcode[] = {};
 }

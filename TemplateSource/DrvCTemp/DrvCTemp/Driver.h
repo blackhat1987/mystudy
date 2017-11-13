@@ -2,8 +2,8 @@
 #include "stdafx.h"
 
 //为避免混淆这两个要一致
-#define  DEVICE_NAME L"\\device\\PopWinDrv"
-#define  LINK_NAME   L"\\dosdevices\\PopWinDrv"
+#define  DEVICE_NAME L"\\device\\DrvCTemp"
+#define  LINK_NAME   L"\\dosdevices\\DrvCTemp"
 
 #define IOCTRL_BASE 0X8000
 #define FGIOCTRL_CODE(i) \
@@ -11,6 +11,12 @@
 
 #define IOCTL_SEND_RESULT_TO_R0 FGIOCTRL_CODE(0)
 #define IOCTL_XXX_ATTACK        FGIOCTRL_CODE(1)
+
+struct _DEVICE_EXTENSION
+{
+	int abc;
+}DEVICE_EXTENSION, *PDEVICE_EXTENSION;
+
 
 /*卸载函数*/
 VOID DriverUnload(PDRIVER_OBJECT pDriverObject);

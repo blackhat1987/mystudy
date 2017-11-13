@@ -36,7 +36,7 @@ NTSTATUS CreateDevice(IN PDRIVER_OBJECT pDriverObject)
 
 	//1.创建设备
 	status = IoCreateDevice(pDriverObject,
-		0,
+		sizeof(DEVICE_EXTENSION),
 		&ucDeviceName,
 		FILE_DEVICE_UNKNOWN,
 		0, FALSE,
@@ -72,6 +72,10 @@ NTSTATUS CreateDevice(IN PDRIVER_OBJECT pDriverObject)
 	pDriverObject->MajorFunction[IRP_MJ_CLEANUP] = DispatchClean;
 	pDriverObject->MajorFunction[IRP_MJ_CLOSE] = DispatchClose;
 	pDriverObject->DriverUnload = DriverUnload;
+	
+	//code here 
+	PDEVICE_EXTENSION pExt;
+	pExt = (PDEVICE_EXTENSION)pDevObj->DeviceExtension;
 	return STATUS_SUCCESS;
 }
 

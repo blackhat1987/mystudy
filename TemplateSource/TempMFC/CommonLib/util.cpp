@@ -126,4 +126,148 @@ namespace usr::util
 
 		return GetSaveFileName(&ofn);
 	}
+
+	void loadfile2vec(_tstring file_name, std::vector<BYTE> &data_)
+	{
+		auto file = std::experimental::make_unique_resource(
+			CreateFile(file_name.c_str(), GENERIC_READ, FILE_SHARE_READ,
+				nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr),
+			&CloseHandle
+		);
+		auto _handle = file.get();
+		if (_handle)
+		{
+			auto file_size = GetFileSize(_handle, nullptr);
+			data_.resize(file_size);
+			std::uninitialized_fill_n(&data_[0], file_size, 0);
+			DWORD read_size = 0;
+			auto bRet= ReadFile(_handle, &data_[0], file_size, &read_size, nullptr);
+		}
+	}
+	void vec2savefile(_tstring file_name, const std::vector<BYTE> _data)
+	{
+		auto file = std::experimental::make_unique_resource(
+			CreateFile(file_name.c_str(), GENERIC_WRITE, FILE_SHARE_READ,
+				nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr),
+			&CloseHandle
+		);
+		auto _handle = file.get();
+		if (_handle)
+		{
+			DWORD write_size = 0;
+			auto bRet = WriteFile(_handle, &_data[0], _data.size(), &write_size, nullptr);
+		}
+	}
+	bool is_process_bit64(DWORD process_id)
+	{
+		bool isX86 = false;
+#ifndef _WIN64  
+		isX86 = GetProcAddress(GetModuleHandle(TEXT("ntdll")), "NtWow64DebuggerCall") == nullptr ? true : false;
+#endif  
+		if (isX86)
+			return false;
+		auto _process = std::experimental::make_unique_resource(
+			OpenProcess(PROCESS_ALL_ACCESS, FALSE, (DWORD)process_id),
+			&CloseHandle
+		);
+		if (!_process.get())
+		{
+			return false;
+		}
+		using ISWOW64PROCESS = decltype(&IsWow64Process);
+		ISWOW64PROCESS fnIsWow64Process;
+		BOOL isWow64 = TRUE;
+		fnIsWow64Process = (ISWOW64PROCESS)GetProcAddress(GetModuleHandle(TEXT("kernel32")), "IsWow64Process");
+		if (fnIsWow64Process != nullptr)
+			fnIsWow64Process(_process.get(), &isWow64);
+		return !isWow64;
+	}
+
+	PVOID get_sys_info(DWORD32 sysinfo)
+	{
+		PVOID p_ret = nullptr;
+		auto cbBuffer = 0x5000UL;
+		auto x = false;
+		auto error = false;
+		p_ret = malloc(cbBuffer);
+		if (!p_ret)
+		{
+			return nullptr;
+		}
+		while (x == false)
+		{
+			int ret = ntdll::ZwQuerySystemInformation(
+				(ntdll::SYSTEM_INFORMATION_CLASS)sysinfo,
+				p_ret, 
+				cbBuffer,
+				0);
+			if (ret < 0)
+			{
+				if (ret == STATUS_INFO_LENGTH_MISMATCH)
+				{
+					cbBuffer = cbBuffer + cbBuffer;
+					free(p_ret);
+					p_ret = malloc(cbBuffer);
+					if (!p_ret) return nullptr;
+					x = false;
+				}
+				else
+				{
+					x = true;
+					error = true;
+				}
+			}
+			else x = true;
+		}
+		if (error==false)
+		{
+			return p_ret;
+		}
+		if (p_ret)
+		{
+			free(p_ret);
+		}
+		return nullptr;
+	}
+	DWORD get_main_tid(DWORD process_id)
+	{
+		auto sysinfo = get_sys_info(DWORD32(ntdll::SystemExtendedProcessInformation));
+		if (!sysinfo)
+		{
+			return 0;
+		}
+		auto exit1 = std::experimental::make_scope_exit([&]() {
+			if (sysinfo)
+				free(sysinfo);
+		});
+		auto p = reinterpret_cast<ntdll::PSYSTEM_PROCESS_INFORMATION>(sysinfo);
+		while (1)
+		{
+			if (p->UniqueProcessId == (HANDLE)process_id)
+			{
+				auto ThreadId = (DWORD)p->Threads[0].ClientId.UniqueThread;
+				return ThreadId;
+			}
+			if (p->NextEntryOffset == 0) break;
+			p = reinterpret_cast<ntdll::PSYSTEM_PROCESS_INFORMATION>((uint8_t*)p + (p->NextEntryOffset));
+		}
+		return 0;
+	}
+
+	DWORD32 crc32(LPVOID data_, std::size_t size_)
+	{
+		return ntdll::RtlComputeCrc32(0, data_, size_);
+	}
+
+	VOID Util_SHA256(_In_ PBYTE pb, _In_ DWORD cb, _Out_ __bcount(32) PBYTE pbHash)
+	{
+		BCRYPT_ALG_HANDLE hAlg = NULL;
+		BCRYPT_HASH_HANDLE hHash = NULL;
+		BCryptOpenAlgorithmProvider(&hAlg, BCRYPT_SHA256_ALGORITHM, NULL, 0);
+		BCryptCreateHash(hAlg, &hHash, NULL, 0, NULL, 0, 0);
+		BCryptHashData(hHash, pb, cb, 0);
+		BCryptFinishHash(hHash, pbHash, 32, 0);
+		BCryptDestroyHash(hHash);
+		BCryptCloseAlgorithmProvider(hAlg, 0);
+	}
 }

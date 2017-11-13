@@ -22,7 +22,10 @@ namespace mfc
 		{
 			_MapColumnToString[_nColumnCount] = _columnName;
 			_MapStringToColumn[_columnName] = _nColumnCount;
-			auto _min_width = _columnName.size() * 100;
+			auto _min_width = _columnName.size() * 50;
+			auto max = [](auto a, auto b) {
+				return (((a) > (b)) ? (a) : (b)); 
+			};
 			_listctrl->InsertColumn(_nColumnCount, _columnName.c_str(), LVCFMT_LEFT, max(_width, _min_width));
 			_nColumnCount++;
 		}

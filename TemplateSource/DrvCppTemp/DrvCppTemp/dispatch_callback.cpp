@@ -25,9 +25,52 @@ NTSTATUS Ioctrl_Handle2(PVOID InputBuffer,
 	return STATUS_SUCCESS;
 }
 
+NTSTATUS CreateDispatch(PDEVICE_OBJECT pDevObj, PIRP pIrp)
+{
+	LOG_DEBUG("create dispatch\r\n");
+	pIrp->IoStatus.Status = STATUS_SUCCESS;
+	pIrp->IoStatus.Information = 0;
+	IoCompleteRequest(pIrp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
+}
+
+
+NTSTATUS ReadDispatch(PDEVICE_OBJECT pDevObj, PIRP pIrp)
+{
+	
+	LOG_DEBUG("read dispatch\r\n");
+	pIrp->IoStatus.Status = STATUS_SUCCESS;
+	pIrp->IoStatus.Information = 0;
+	IoCompleteRequest(pIrp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
+}
+
+NTSTATUS WriteDispatch(PDEVICE_OBJECT pDevObj, PIRP pIrp)
+{
+	LOG_DEBUG("write dispatch\r\n");
+	pIrp->IoStatus.Status = STATUS_SUCCESS;
+	pIrp->IoStatus.Information = 0;
+	IoCompleteRequest(pIrp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
+}
+
+NTSTATUS CloseDispatch(PDEVICE_OBJECT pDevObj, PIRP pIrp)
+{
+	LOG_DEBUG("close dispatch\r\n");
+	pIrp->IoStatus.Status = STATUS_SUCCESS;
+	pIrp->IoStatus.Information = 0;
+	IoCompleteRequest(pIrp, IO_NO_INCREMENT);
+	return STATUS_SUCCESS;
+}
 
 void setDpcFun()
 {
+	//read, wirte
+	device.set_irp_callback(IRP_MJ_CREATE, CreateDispatch);
+	device.set_irp_callback(IRP_MJ_READ, ReadDispatch);
+	device.set_irp_callback(IRP_MJ_WRITE, WriteDispatch);
+	device.set_irp_callback(IRP_MJ_CLOSE, CloseDispatch);
+
 
 	//ioctl
 	device.set_ioctrl_callback(FG_IOCTL_HELLO, Ioctrl_Handle1);

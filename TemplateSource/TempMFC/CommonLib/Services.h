@@ -3,6 +3,8 @@
 //服务操作
 namespace usr::util
 {
+#pragma warning(push)
+#pragma warning(disable:4267)
 	//创建
 	//删除
 	//改变状态
@@ -293,8 +295,8 @@ namespace usr::util
 					
 					std::uninitialized_fill_n(pData, Len + dwSize + 2,0);
 					RegQueryValueEx(hHostKey, svc_name.c_str(), 0, 0, (BYTE*)pData, &dwSize);
-					wchar_t *pNames = nullptr;
-					for (pNames = (wchar_t *)pData; *pNames; pNames = wcschr(pNames, 0) + 1)
+					TCHAR *pNames = nullptr;
+					for (pNames = (TCHAR *)pData; *pNames; pNames = _tcschr(pNames, 0) + 1)
 					{
 						if (!lstrcmpi(pNames, svc_name.c_str()))
 							break;
@@ -326,4 +328,5 @@ namespace usr::util
 	private:
 		SC_HANDLE _schandle;
 	};
+#pragma warning(pop)
 };

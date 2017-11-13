@@ -10,9 +10,9 @@ namespace mfc
 		DWORD m_tabCnts = 0;
 		std::vector<CDialogEx *> listDlgs;
 	public:
-		TabCtrl(){}
-		TabCtrl(CTabCtrl *tabCtl):m_tab(tabCtl){}
-		~TabCtrl(){}
+		TabCtrl() {}
+		TabCtrl(CTabCtrl *tabCtl) :m_tab(tabCtl) {}
+		~TabCtrl() {}
 		TabCtrl * operator =(const TabCtrl *tab)
 		{
 			this->m_tab = tab->m_tab;

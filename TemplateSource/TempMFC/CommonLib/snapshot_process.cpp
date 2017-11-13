@@ -42,6 +42,9 @@ namespace usr::util::snapshot
 			ntdll::SYSTEM_PROCESS_INFORMATION* p = (ntdll::SYSTEM_PROCESS_INFORMATION*)Buffer;
 			while (1)
 			{
+				auto min = [](auto a, auto b) {
+					return (((a) < (b)) ? (a) : (b)); };
+
 				WCHAR szName[MAX_PATH] = { 0 };
 				RtlCopyMemory(szName, p->ImageName.Buffer, min(p->ImageName.MaximumLength, 512));
 				process_item item = {};

@@ -25,7 +25,7 @@ namespace usr::util
 		Process _Process;
 	private:
 		bool is_local() {
-			return (_Process.get() == nullptr);
+			return (_Process.get() == GetCurrentProcess());
 		}
 	private:
 		template<typename Type>
@@ -226,8 +226,10 @@ namespace usr::util
 				}
 				if (_sig[j] == _sig[i])
 					j++;
-
+#pragma warning(push)
+#pragma warning(disable:4244)
 				_next[i] = j;
+#pragma warning(pop)
 			}
 		}
 		SIZE_T kmp_nwc_search0(std::vector<int> _next, std::vector<BYTE> _code, PBYTE _sig, SIZE_T _sig_size)
@@ -411,6 +413,16 @@ namespace usr::util
 			}
 			else
 				return VirtualAllocEx(_Process.get(), nullptr, _size, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+		}
+		bool write(PVOID _address, PVOID _buffer, SIZE_T _size)
+		{
+			SIZE_T dwWrite = 0;
+			auto bRet = WriteProcessMemory(_Process.get(), _address, _buffer, _size, &dwWrite);
+			if (bRet&&dwWrite==_size)
+			{
+				return true;
+			}
+			return false;
 		}
 	};
 }

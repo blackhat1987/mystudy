@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6BBF5717-3130-4944-A8CF-DA70EE34A088}</ProjectGuid>
+    <RootNamespace>TempMFC</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>TempMFC</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\LIEF-0.7.0-win32\include;%(AdditionalIncludeDirectories);$(SolutionDir)$(ProjectName)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\uc_engine\unicorn\include;..\LIEF-0.7.0-win64\include;%(AdditionalIncludeDirectories);$(SolutionDir)$(ProjectName)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\LIEF-0.7.0-win32\include;%(AdditionalIncludeDirectories);$(SolutionDir)$(ProjectName)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\uc_engine\unicorn\include;..\LIEF-0.7.0-win64\include;%(AdditionalIncludeDirectories);$(SolutionDir)$(ProjectName)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CommonLib\client.h" />
+    <ClInclude Include="..\CommonLib\dll_hijack.h" />
+    <ClInclude Include="..\CommonLib\inject.h" />
+    <ClInclude Include="..\CommonLib\ldr_module.h" />
+    <ClInclude Include="..\CommonLib\ldr_patch_loader.h" />
+    <ClInclude Include="..\CommonLib\ldr_tools.h" />
+    <ClInclude Include="..\CommonLib\lib_header.h" />
+    <ClInclude Include="..\CommonLib\lsp_helper.h" />
+    <ClInclude Include="..\CommonLib\Memory.h" />
+    <ClInclude Include="..\CommonLib\pkg_msg.h" />
+    <ClInclude Include="..\CommonLib\Process.h" />
+    <ClInclude Include="..\CommonLib\server.h" />
+    <ClInclude Include="..\CommonLib\Services.h" />
+    <ClInclude Include="..\CommonLib\snapshot_process.h" />
+    <ClInclude Include="..\CommonLib\usr_ini_file.h" />
+    <ClInclude Include="..\CommonLib\util.h" />
+    <ClInclude Include="..\CommonMFC\mfc_listview.h" />
+    <ClInclude Include="..\CommonMFC\mfc_tab.h" />
+    <ClInclude Include="..\Common\Common.h" />
+    <ClInclude Include="..\Common\hash_string.h" />
+    <ClInclude Include="..\Common\nativelib.h" />
+    <ClInclude Include="..\Common\scope_exit.h" />
+    <ClInclude Include="..\Common\SingleTon.h" />
+    <ClInclude Include="..\Common\unique_resource.h" />
+    <ClInclude Include="..\Common\WinStationLib.h" />
+    <ClInclude Include="..\Common\xor_string.h" />
+    <ClInclude Include="..\hook_engine\AsmGen.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\arm.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\asmjit.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\asmjit_apibegin.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\asmjit_apiend.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\asmjit_build.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\arch.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\assembler.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codebuilder.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codecompiler.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codeemitter.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codeholder.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\constpool.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\cpuinfo.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\func.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\globals.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\inst.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\logging.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\misc_p.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\operand.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\osutils.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\regalloc_p.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\runtime.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\simdtypes.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\string.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\utils.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\vmem.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\zone.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86assembler.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86builder.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86compiler.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86emitter.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86globals.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86inst.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86instimpl_p.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86internal_p.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86logging_p.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86misc.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86operand.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86regalloc_p.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmparser.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmtk.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmtokenizer.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\elfdefs.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\globals.h" />
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\strtod.h" />
+    <ClInclude Include="..\hook_engine\BaseHook.h" />
+    <ClInclude Include="..\hook_engine\Detours.h" />
+    <ClInclude Include="..\hook_engine\DetoursInternal.h" />
+    <ClInclude Include="..\hook_engine\hook_engine.h" />
+    <ClInclude Include="..\hook_engine\Intrinsic.h" />
+    <ClInclude Include="..\hook_engine\Reassembler.h" />
+    <ClInclude Include="..\libdump\lib_dump.h" />
+    <ClInclude Include="..\uc_engine\uc_engine.h" />
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\arm.h" />
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\arm64.h" />
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\m68k.h" />
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\mips.h" />
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\platform.h" />
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\sparc.h" />
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\unicorn.h" />
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\x86.h" />
+    <ClInclude Include="MainApp.h" />
+    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CommonLib\dll_hijacking.cpp" />
+    <ClCompile Include="..\CommonLib\ldr_patch.cpp" />
+    <ClCompile Include="..\CommonLib\ldr_tools.cpp" />
+    <ClCompile Include="..\CommonLib\snapshot_process.cpp" />
+    <ClCompile Include="..\CommonLib\util.cpp" />
+    <ClCompile Include="..\hook_engine\AsmGen.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\arch.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\assembler.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codebuilder.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codecompiler.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codeemitter.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codeholder.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\constpool.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\cpuinfo.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\func.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\globals.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\inst.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\logging.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\operand.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\osutils.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\regalloc.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\runtime.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\string.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\utils.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\vmem.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\zone.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86assembler.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86builder.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86compiler.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86inst.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86instimpl.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86internal.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86logging.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86operand.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86operand_regs.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86regalloc.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmparser.cpp" />
+    <ClCompile Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmtokenizer.cpp" />
+    <ClCompile Include="..\hook_engine\Detours32.cpp" />
+    <ClCompile Include="..\hook_engine\Detours64.cpp" />
+    <ClCompile Include="..\hook_engine\DetoursInternal.cpp" />
+    <ClCompile Include="..\hook_engine\distorm\DistormX.cpp" />
+    <ClCompile Include="..\hook_engine\Reassembler.cpp" />
+    <ClCompile Include="..\uc_engine\uc_engine.cpp" />
+    <ClCompile Include="MainApp.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TempMFC.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TempMFC.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\TempMFC.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="TempMFC.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

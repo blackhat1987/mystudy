@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{ac0861d5-afbb-4bc2-a328-623a1b54325f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonLib">
+      <UniqueIdentifier>{1373e6e8-7f12-4c6a-b802-472fae9cad01}</UniqueIdentifier>
+    </Filter>
+	<Filter Include="CommonMFC">
+      <UniqueIdentifier>{0f51f881-8dab-4575-a508-5861887af119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hookengine">
+      <UniqueIdentifier>{74ba4a8d-dfc5-4f20-bdf1-adc7bdd7d482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hookengine\asmjit">
+      <UniqueIdentifier>{c854d341-28a2-4e71-b13c-a28157dc02b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hookengine\asmjit\base">
+      <UniqueIdentifier>{b9dbfed1-b9c8-4e3e-8518-9bce2d277022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hookengine\asmjit\x86">
+      <UniqueIdentifier>{e1fb8e68-d29c-4ad3-9820-d9879944ca4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hookengine\distorm">
+      <UniqueIdentifier>{ee94ccd2-86aa-4fe3-9613-9cce5495807c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hookengine\asmtk">
+      <UniqueIdentifier>{c3308587-316c-4328-9437-57ce3c3c50e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libdmp">
+      <UniqueIdentifier>{e3528dba-b094-4b49-90b9-cad231c79bff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucengine">
+      <UniqueIdentifier>{6800e452-657c-435e-8733-d69f333cc114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucengine\unicorn">
+      <UniqueIdentifier>{bd6deca1-4739-4c06-b3ad-860defd6320b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\nativelib.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\scope_exit.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SingleTon.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\unique_resource.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\WinStationLib.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\xor_string.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\client.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\dll_hijack.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\inject.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\ldr_module.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\ldr_patch_loader.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\ldr_tools.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\lib_header.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\lsp_helper.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\Memory.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\pkg_msg.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\Process.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\server.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\Services.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\snapshot_process.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\usr_ini_file.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonLib\util.h">
+      <Filter>CommonLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\arch.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\assembler.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codebuilder.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codecompiler.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codeemitter.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codeholder.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\constpool.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\cpuinfo.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\func.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\globals.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\inst.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\logging.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\misc_p.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\operand.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\osutils.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\regalloc_p.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\runtime.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\simdtypes.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\string.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\utils.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\vmem.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\zone.h">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86assembler.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86builder.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86compiler.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86emitter.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86globals.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86inst.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86instimpl_p.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86internal_p.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86logging_p.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86misc.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86operand.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86regalloc_p.h">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\arm.h">
+      <Filter>hookengine\asmjit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\asmjit.h">
+      <Filter>hookengine\asmjit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\asmjit_apibegin.h">
+      <Filter>hookengine\asmjit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\asmjit_apiend.h">
+      <Filter>hookengine\asmjit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\asmjit_build.h">
+      <Filter>hookengine\asmjit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\base.h">
+      <Filter>hookengine\asmjit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86.h">
+      <Filter>hookengine\asmjit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\AsmGen.h">
+      <Filter>hookengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\BaseHook.h">
+      <Filter>hookengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\Detours.h">
+      <Filter>hookengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\DetoursInternal.h">
+      <Filter>hookengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\Intrinsic.h">
+      <Filter>hookengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\Reassembler.h">
+      <Filter>hookengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\hook_engine.h">
+      <Filter>hookengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmparser.h">
+      <Filter>hookengine\asmtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmtk.h">
+      <Filter>hookengine\asmtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmtokenizer.h">
+      <Filter>hookengine\asmtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\elfdefs.h">
+      <Filter>hookengine\asmtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\globals.h">
+      <Filter>hookengine\asmtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hook_engine\asmjit\asmtk\src\asmtk\strtod.h">
+      <Filter>hookengine\asmtk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\hash_string.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdump\lib_dump.h">
+      <Filter>libdmp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\arm.h">
+      <Filter>ucengine\unicorn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\arm64.h">
+      <Filter>ucengine\unicorn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\m68k.h">
+      <Filter>ucengine\unicorn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\mips.h">
+      <Filter>ucengine\unicorn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\platform.h">
+      <Filter>ucengine\unicorn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\sparc.h">
+      <Filter>ucengine\unicorn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\unicorn.h">
+      <Filter>ucengine\unicorn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\unicorn\include\unicorn\x86.h">
+      <Filter>ucengine\unicorn</Filter>
+    </ClInclude>
+    <ClInclude Include="MainApp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\uc_engine\uc_engine.h">
+      <Filter>ucengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonMFC\mfc_listview.h">
+      <Filter>CommonMFC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonMFC\mfc_tab.h">
+      <Filter>CommonMFC</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonLib\dll_hijacking.cpp">
+      <Filter>CommonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonLib\ldr_patch.cpp">
+      <Filter>CommonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonLib\ldr_tools.cpp">
+      <Filter>CommonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonLib\snapshot_process.cpp">
+      <Filter>CommonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonLib\util.cpp">
+      <Filter>CommonLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\arch.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\assembler.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codebuilder.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codecompiler.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codeemitter.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\codeholder.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\constpool.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\cpuinfo.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\func.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\globals.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\inst.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\logging.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\operand.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\osutils.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\regalloc.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\runtime.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\string.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\utils.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\vmem.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\base\zone.cpp">
+      <Filter>hookengine\asmjit\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86assembler.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86builder.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86compiler.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86inst.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86instimpl.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86internal.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86logging.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86operand.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86operand_regs.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmjit\src\asmjit\x86\x86regalloc.cpp">
+      <Filter>hookengine\asmjit\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\distorm\DistormX.cpp">
+      <Filter>hookengine\distorm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\AsmGen.cpp">
+      <Filter>hookengine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\Detours32.cpp">
+      <Filter>hookengine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\Detours64.cpp">
+      <Filter>hookengine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\DetoursInternal.cpp">
+      <Filter>hookengine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\Reassembler.cpp">
+      <Filter>hookengine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmparser.cpp">
+      <Filter>hookengine\asmtk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hook_engine\asmjit\asmtk\src\asmtk\asmtokenizer.cpp">
+      <Filter>hookengine\asmtk</Filter>
+    </ClCompile>
+    <ClCompile Include="MainApp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\uc_engine\uc_engine.cpp">
+      <Filter>ucengine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\TempMFC.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TempMFC.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TempMFC.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>
