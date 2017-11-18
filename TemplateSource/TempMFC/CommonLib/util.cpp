@@ -22,6 +22,28 @@ namespace usr::util
 		freopen_s(&pFile, "CON", "w", stdout);
 		freopen_s(&pFile, "CON", "w", stderr);
 	}
+	VOID DbgPrintMsg(char *msg)
+	{
+#ifdef _DEBUG
+		setlocale(LC_CTYPE, "");
+		DWORD eMsgLen, errNum = GetLastError();
+		LPTSTR lpvSysMsg;
+
+		if (msg)
+			printf("%s: ", msg);
+		eMsgLen = FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER |
+			FORMAT_MESSAGE_FROM_SYSTEM,
+			NULL, errNum, MAKELANGID(0x00, 0x01),
+			(LPTSTR)&lpvSysMsg, 0, NULL);
+		if (eMsgLen > 0)
+			_ftprintf(stderr, _T("%d %s\n"), errNum, lpvSysMsg);
+		else
+			_ftprintf(stderr, _T("Error %d\n"), errNum);
+		if (lpvSysMsg != NULL)
+			LocalFree(lpvSysMsg);
+#endif
+	}
+
 	void hex2string(_tstring &string_, LPVOID data_, std::size_t size_)
 	{
 		string_ = _T("");

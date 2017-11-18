@@ -1,8 +1,14 @@
 REM 清理项目垃圾文件
-del *.sdf *.log *.user *.ipch *.aps /s
-del *.exe /s
-del *.suo /s /a h
-del *.ilk *.pdb *.tlog *.mainfest *.res /s
-del *.obj *.pch *.codeanalysis *.codeanalysis/s
-rmdir /s/q ipch Debug Release x64 .vs
+del *.sdf *.log 
 del *.VC.db
+del /s *.aps
+del /a:h *.suo
+rmdir /s /q .vs
+rmdir /s /q ipch
+rmdir /s /q x64
+rmdir /s /q Debug
+rmdir /s /q Release
+rmdir /s /q TempMFC\x64
+rmdir /s /q TempMFC\Debug
+rmdir /s /q TempMFC\Release
+cd HyperPlatform

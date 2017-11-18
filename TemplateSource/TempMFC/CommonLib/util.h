@@ -5,6 +5,7 @@ namespace usr::util
 {
 	void get_all_privilege();
 	void alloc_cmd_window();
+	VOID DbgPrintMsg(char *msg);
 	void hex2string(_tstring &string_, LPVOID data_, std::size_t size_);
 	void string2hex(_tstring string_, std::vector<BYTE> &data_);
 	//DWORD32 rot13

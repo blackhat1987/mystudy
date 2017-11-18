@@ -34,8 +34,6 @@ void CMainWindow::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CMainWindow, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_BUTTON1, &CMainWindow::OnBnClickedButton1)
-	ON_BN_CLICKED(IDC_BUTTON2, &CMainWindow::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -51,7 +49,7 @@ BOOL CMainWindow::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
-	usr::util::get_all_privilege();
+	//usr::util::get_all_privilege();
 	usr::util::alloc_cmd_window();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
@@ -93,16 +91,3 @@ HCURSOR CMainWindow::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-
-void CMainWindow::OnBnClickedButton1()
-{
-	// TODO: 在此添加控件通知处理程序代码
-	MessageBox(L"caonima");
-}
-
-
-void CMainWindow::OnBnClickedButton2()
-{
-	// TODO: 在此添加控件通知处理程序代码
-	MessageBox(L"caonimabbaba");
-}

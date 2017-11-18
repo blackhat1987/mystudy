@@ -5,8 +5,6 @@ namespace usr::util::snapshot
 	void get_snapshot_process(std::vector<process_item> &_process)
 	{
 		get_all_privilege();
-
-
 		unsigned long cbBuffer = 0x5000;  //Initial Buffer Size
 		void* Buffer = (void*)malloc(cbBuffer);
 		auto exit1 = std::experimental::make_scope_exit([&]() {
@@ -56,5 +54,35 @@ namespace usr::util::snapshot
 			}
 		}
 	}
+	BOOL FindProcessByName(process_item &item)
+	{
+		auto hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS | TH32CS_SNAPTHREAD, 0);
+		if (hSnapshot == INVALID_HANDLE_VALUE)
+			return FALSE;
+
+		item.ProcessId = 0;
+
+		PROCESSENTRY32 pe = { sizeof(pe) };
+		if (::Process32First(hSnapshot, &pe)) {
+			do {
+				if (_wcsicmp(pe.szExeFile, item.process_name.c_str()) == 0) {
+					item.ProcessId = pe.th32ProcessID;
+					THREADENTRY32 te = { sizeof(te) };
+					if (Thread32First(hSnapshot, &te)) {
+						do {
+							if (te.th32OwnerProcessID == item.ProcessId) {
+								item.tids.push_back(te.th32ThreadID);
+							}
+						} while (Thread32Next(hSnapshot, &te));
+					}
+					break;
+				}
+			} while (Process32Next(hSnapshot, &pe));
+		}
+		CloseHandle(hSnapshot);
+		return item.ProcessId > 0 && !item.tids.empty();
+	}
 }
+
+	
 
