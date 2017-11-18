@@ -11,4 +11,3 @@ rmdir /s /q Release
 rmdir /s /q TempMFC\x64
 rmdir /s /q TempMFC\Debug
 rmdir /s /q TempMFC\Release
-cd HyperPlatform

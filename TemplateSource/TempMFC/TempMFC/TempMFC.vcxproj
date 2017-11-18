@@ -275,6 +275,10 @@
     <ClInclude Include="..\hook_engine\Intrinsic.h" />
     <ClInclude Include="..\hook_engine\Reassembler.h" />
     <ClInclude Include="..\libdump\lib_dump.h" />
+    <ClInclude Include="..\uc_engine\uc_engine.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="..\uc_engine\unicorn\include\unicorn\arm.h" />
     <ClInclude Include="..\uc_engine\unicorn\include\unicorn\arm64.h" />
     <ClInclude Include="..\uc_engine\unicorn\include\unicorn\m68k.h" />
@@ -334,6 +338,10 @@
     <ClCompile Include="..\hook_engine\DetoursInternal.cpp" />
     <ClCompile Include="..\hook_engine\distorm\DistormX.cpp" />
     <ClCompile Include="..\hook_engine\Reassembler.cpp" />
+    <ClCompile Include="..\uc_engine\uc_engine.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="MainApp.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="stdafx.cpp">
