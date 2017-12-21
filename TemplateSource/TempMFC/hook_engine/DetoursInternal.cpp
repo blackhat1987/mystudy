@@ -93,7 +93,7 @@ namespace Detours::Internal
 			return nullptr;
 
 		// Validate PE Header and (64-bit|32-bit) module type
-		PIMAGE_NT_HEADERS64 ntHeaders = (PIMAGE_NT_HEADERS64)(moduleBase + dosHeader->e_lfanew);
+		PIMAGE_NT_HEADERS ntHeaders = (PIMAGE_NT_HEADERS)(moduleBase + dosHeader->e_lfanew);
 
 		if (ntHeaders->Signature != IMAGE_NT_SIGNATURE)
 			return nullptr;
