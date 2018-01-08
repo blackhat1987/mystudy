@@ -906,4 +906,7 @@
       <Filter>patch_guard</Filter>
     </MASM>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
 </Project>
